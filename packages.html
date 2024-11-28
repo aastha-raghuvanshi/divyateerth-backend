@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="packages.css">
+    <title>Packages</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="navbar">
+        <div class="logo">DivyaTeerth</div>
+        <nav class="menu">
+            <a href="index.html">Home</a>
+            <a href="index.html#about-us">About Us</a>
+            <a href="index.html#cities">Cities</a>
+            <a href="packages.html">Packages</a>
+            <a href="#blog">Blog</a>
+            <a href="#contact-us">Contact Us</a>
+        </nav>
+        <div class="user-details" id="userDetails">
+            <button id="authButton" class="btn"></button>
+        </div>
+    </header>
+
+    <!-- Main Section -->
+    <main>
+        <!-- Selected Package -->
+        <section id="selected-package">
+            <h2>Selected Package</h2>
+            <div>
+                <div>
+                    <label for="packageName">Package:</label>
+                    <input type="text" id="packageName" placeholder="Select A Package" readonly
+                        style="width: 200px !important;">
+                </div>
+                <div>
+                    <label for="adultsCount">Adults:</label>
+                    <button id="adultsMinus">-</button>
+                    <span id="adultsCount" style="width: 80px !important;">1</span>
+                    <button id="adultsPlus">+</button>
+                </div>
+                <div>
+                    <label for="kidsCount">Kids:</label>
+                    <button id="kidsMinus">-</button>
+                    <span id="kidsCount" style="width: 80px !important;">0</span>
+                    <button id="kidsPlus">+</button>
+                </div>
+                <div>
+                    <label for="startDate">Starting Date:</label>
+                    <input type="date" id="startDate" style="width: 150px !important;">
+                </div>
+            </div>
+            <div>
+                <div>
+                    <label for="calculatedPrice">Calculated Price:</label>
+                    <span id="calculatedPrice" style="width: 300px !important;">0</span>
+                </div>
+                <button id="bookNow" class="btn">Book Now</button>
+            </div>
+        </section>
+        <p id="successMessage">Booked Successfully!</p>
+        <p id="errorMessage">Please ensure all fields are completed correctly before booking.</p>
+
+        <!-- Package List -->
+        <section id="package-list">
+            <h2>Package List</h2>
+            <div class="package-cards">
+                <!-- Packages will be dynamically rendered here -->
+            </div>
+        </section>
+
+        <!-- Selected Package Description -->
+        <section id="package-description">
+            <h2>Package Description</h2>
+            <div id="descriptionContent">
+                <!-- Description will be dynamically rendered here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-form">
+                <h2>Contact Us</h2>
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Submit</button>
+                </form>
+            </div>
+            <div class="footer-details">
+                <h2>Get in Touch</h2>
+                <p><strong>Email:</strong> contact@company.com</p>
+                <p><strong>Phone:</strong> +123 456 7890</p>
+                <p><strong>Address:</strong> 123 Main Street, City, Country</p>
+                <p><strong>Business Hours:</strong></p>
+                <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Package details array
+        const packageDetails = [
+            {
+                name: "CHAR DHAM YATRA",
+                daysNights: "6 Days/5 Nights",
+                pricePerPerson: "175000",
+                destination: "DEHRADUN, YAMUNOTRI, GANGOTRI, KEDARNATH, BADRINATH",
+                daywiseItenary: [
+                    "DAY 1: ARRIVAL AT DEHRADUN",
+                    "DAY 2: DEHRADUN TO YAMUNOTRI",
+                    "DAY 3: YAMUNOTRI TO GANGOTRI",
+                    "DAY 4: GANGOTRI TO KEDARNATH",
+                    "DAY 5: KEDARNATH TO BADRINATH"
+                ],
+                transport: "Helicopter",
+                otherInclusiveDetails: [
+                    "Cost of helicopter for Char Dham",
+                    "Cost of night stay with all meals  on twin sharing basis",
+                    "VIP Darshan at all temples",
+                    "Palki/pony ride at Yamunotri",
+                    "Parking charges are applicable",
+                    "Local Transportation at all Dhams",
+                    "Airport and hotel transfer at Dehradun",
+                    "All properties lodge with hot water, towels, shower and western toiletries",
+                    "Hotel can be changed with similar available options",
+                    "Full amount has to be deposited 14 days prior to date of journey",
+                    "The booking of charter should be done in advance with the deposit of 50% amount",
+                    "Only 5 kg luggage is permitted in the chopper so no heavy luggage is allowed"
+                ],
+                image: "images/charDham.jpg"
+            },
+            {
+                name: "FESTIVAL TOUR PACKAGE (HOLI)",
+                daysNights: "6 Days/5 Nights",
+                pricePerPerson: "39500",
+                destination: "MATHURA VRINDAVAN",
+                daywiseItenary: [
+                    "DAY 1: Nandgaon Holi: Lathmaar Holi in Nandgaon",
+                    "DAY 2:Mathura - Vrindavan Holi: Phoolwalon ki Hol",
+                    "DAY 3: Gokul Holi",
+                    "DAY 4: Agra visit",
+                    "DAY 5: Holika Dahan - Mathura Vishram Ghat.",
+                    "DAY 6: Dhulandi Holi: colourful water Holi in Brij"
+                ],
+                transport: "Sedan, SUV",
+                otherInclusiveDetails: [
+                    "05 Nights accommodation in as mentioned hotel",
+                    "06 days breakfast included",
+                    "The Lathmaar Holi Nandgaon",
+                    "Celebrate Holi with laddu",
+                    "All sightseeing as per the Itinerary"
+                ],
+                image: "images/festivalTour.png"
+            },
+            {
+                name: "HOLIDAY HEAVEN: HARIDWAR",
+                daysNights: "3 Days/2 Nights",
+                pricePerPerson: "15000",
+                destination: "HARIDWAR",
+                daywiseItenary: [
+                    "DAY 1: ROAD TRIP NEW DELHI TO HARIDWAR. CHECK IN TO HOTEL HARIDWAR",
+                    "DAY 2:  SIGHTSEEING IN HARIDWAR (BHARAT MATA TEMPLE, HAR KI PAURI, RAM JHULA MANSA DEVI TEMPLE AND PARMARTH ASHRAM)",
+                    "DAY 3: ROAD TRIP HARIDWAR TO NEW DELHI (THREE SEATER AC)."
+                ],
+                transport: "SWIFT, ETIOS OR SIMILAR",
+                otherInclusiveDetails: [
+                    "02 Nights accommodation in as mentioned hotel",
+                    "03 days breakfast included",
+                    "Vehicles can be change according to the need",
+                    "Fuel, Toll Tax, State Permit, Driver Allowance and Parking",
+                    "All sightseeing as per the Itinerary"
+                ],
+                image: "images/holidayHeavenInHaridwar.jpg"
+            },
+            {
+                name: "STAY AT THE GANGES",
+                daysNights: "5 Days/4 Nights",
+                pricePerPerson: "35000",
+                destination: "VARANASI",
+                daywiseItenary: [
+                    "DAY 1: ARRIVAL AT VARANASI, KAAL BHAIRAV TEMPLE, SANKAT MOCHAN TEMPLE, VARANASI,S STREET FOOD",
+                    "DAY 2: VISIT TO RAMNAGAR FORT, SARNATH",
+                    `DAY 3: GLIMPSE OF ALL 84 GHATS VIA BOAT RIDE IN EVENING, VISIT TO THE VERY BEAUTIFUL KASHI VISHWANATH TEMPLE, ENJOY THE HEART- SOOTHING GANGA AARTI, HAVE A LUXURIOUS STAY AT TENT CITY WITH ALL THE BEST FACILITIES`,
+                    "DAY 4: ENJOY THE FAMOUS VISHWANATH GALI WITH THE HELP OF OUR TRAVEL GUIDE",
+                    "DAY 5: DEPARTURE FROM VARANASI"
+                ],
+                transport: "Train/Car",
+                otherInclusiveDetails: [
+                    "02 Nights accommodation in as mentioned hotel",
+                    "03 days breakfast included",
+                    "2 Nights staycation at the very best Niraan's Tent City",
+                    "Vehicles can be changed according to the need",
+                    "Fuel, Toll Tax, State Permit, Driver Allowance and Parkin",
+                    "All sightseeing as per the Itinerary",
+                    "Amazing ride on hors",
+                    "Includes breakfast iand spa in Tent Cit"
+                ],
+                image: "images/stayAtGanges.jpg"
+            },
+            {
+                name: "WITNESS THE GLORY IN AYODHYA",
+                daysNights: "3 Days/2 Nights",
+                pricePerPerson: "7000",
+                destination: "AYODHYA",
+                daywiseItenary: [
+                    "DAY 1: ARRIVAL IN AYODHYA",
+                    "DAY 2: VISIT HANUMAN GARHI, VISIT RANMABHOOMI TEMPLE",
+                    "DAY 3: VISIT KANAK BHAVAN TEMPLE, NAGESHWARNATH TEMPLE"
+                ],
+                transport: "TRAIN, SWIFT, ETIOS OR SIMILAR",
+                otherInclusiveDetails: ["Accommodation", "Breakfast", "Guide"],
+                image: "images/witnessTheGloryAtAyodhya.jpg"
+            },
+            {
+                name: "DIVINITY IN SOUTH",
+                daysNights: "6 Days/5 Nights",
+                pricePerPerson: "40000",
+                destination: "MADURAI, RAMESHWARAM, KANYAKUMARI, KOVALAM AND POOVAR",
+                daywiseItenary: [
+                    "DAY 1: ARRIVAL FROM NEW DELHI TO MADURAI, PRIVATE TRANSFER FROM AIRPORT TO HOTEL",
+                    "DAY 2: MADURAI TO RAMESHWARAM",
+                    "DAY 3: BEAUTIFUL SIGHTSEEING AT KANYAKUMARI",
+                    "DAY 4: DHANUSAHKODI TEMPLE",
+                    "DAY 5:  LIGHTHOUSE BEACH TOUR",
+                    "DAY 6: THIRUVANANTHPURAM VISIT AND THEN DEPARTURE"
+                ],
+                transport: "FLIGHT/TRAIN, CAR TRANSPORT FOR NEARBY AREAS",
+                otherInclusiveDetails: [
+                    "05 Nights accommodation in as mentioned hotel",
+                    "05 days breakfast included",
+                    "Vehicles can be change according to the need",
+                    "Fuel, Toll Tax, State Permit, Driver Allowance and Parkin",
+                    "All sightseeing as per the Itinerary"
+                ],
+                image: "images/divinityInTheSouth.jpg"
+            },
+            
+        ];
+
+    </script>
+    <script>
+        // DOM Elements
+        const packageCardsContainer = document.querySelector('.package-cards');
+        const packageNameInput = document.getElementById('packageName');
+        const adultsCountElement = document.getElementById('adultsCount');
+        const kidsCountElement = document.getElementById('kidsCount');
+        const calculatedPriceElement = document.getElementById('calculatedPrice');
+        const descriptionContent = document.getElementById('descriptionContent');
+        const adultsMinus = document.getElementById('adultsMinus');
+        const adultsPlus = document.getElementById('adultsPlus');
+        const kidsMinus = document.getElementById('kidsMinus');
+        const kidsPlus = document.getElementById('kidsPlus');
+
+        // Default Values
+        let selectedPackage = null;
+        let adultsCount = 1;
+        let kidsCount = 0;
+
+        // Render Packages
+        function renderPackages() {
+            packageDetails.forEach((pkg, index) => {
+                const card = document.createElement('div');
+                card.classList.add('card');
+                card.innerHTML = `
+                <div style="background-image: url(${pkg.image});background-size: 100% 100%;">
+        <h3>${pkg.name}</h3>
+        <p>${pkg.daysNights}</p>
+        <p>Price Per Person: ₹${pkg.pricePerPerson}</p>
+        <p>Destination: ${pkg.destination}</p>
+                </div>
+        `;
+                card.addEventListener('click', () => selectPackage(pkg));
+                packageCardsContainer.appendChild(card);
+            });
+        }
+
+        // Select a Package
+        function selectPackage(pkg) {
+            selectedPackage = pkg;
+            packageNameInput.value = pkg.name;
+            adultsCount = 1; // Reset adults count to default
+            kidsCount = 0; // Reset kids count to default
+            updatePrice();
+            displayDescription();
+        }
+
+        // Update Price
+        function updatePrice() {
+            if (!selectedPackage) return;
+
+            const basePrice = parseInt(selectedPackage.pricePerPerson);
+            const totalPrice =
+                adultsCount * basePrice + kidsCount * (basePrice / 2);
+            calculatedPriceElement.textContent = `₹${totalPrice}`;
+        }
+
+        // Display Package Description
+        function displayDescription() {
+            if (!selectedPackage) return;
+
+            descriptionContent.innerHTML = `
+        <h3>${selectedPackage.name}</h3>
+        <p><strong>Days/Nights:</strong> ${selectedPackage.daysNights}</p>
+        <p><strong>Destination:</strong> ${selectedPackage.destination}</p>
+        <p><strong>Transport:</strong> ${selectedPackage.transport}</p>
+        <p><strong>Other Inclusions:</strong> ${selectedPackage.otherInclusiveDetails.join(', ')}</p>
+        <h4>Daywise Itinerary:</h4>
+        <ul>
+        ${selectedPackage.daywiseItenary
+                    .map((day) => `<li>${day}</li>`)
+                    .join('')}
+        </ul>
+    `;
+        }
+
+        // Update Adults Count
+        adultsMinus.addEventListener('click', () => {
+            if (adultsCount > 1) {
+                adultsCount--;
+                adultsCountElement.textContent = adultsCount;
+                updatePrice();
+            }
+        });
+
+        adultsPlus.addEventListener('click', () => {
+            adultsCount++;
+            adultsCountElement.textContent = adultsCount;
+            updatePrice();
+        });
+
+        // Update Kids Count
+        kidsMinus.addEventListener('click', () => {
+            if (kidsCount > 0) {
+                kidsCount--;
+                kidsCountElement.textContent = kidsCount;
+                updatePrice();
+            }
+        });
+
+        kidsPlus.addEventListener('click', () => {
+            kidsCount++;
+            kidsCountElement.textContent = kidsCount;
+            updatePrice();
+        });
+
+        // Initial Render
+        renderPackages();
+    </script>
+    <script>
+        document.getElementById("bookNow").addEventListener("click", function () {
+            // Check if user is logged in (i.e., user details are present in localStorage)
+            var user = JSON.parse(localStorage.getItem('user'));
+            if (!user) {
+                alert("You must be logged in to book.");
+                return;
+            }
+
+            // Get the calculated price value
+            var calculatedPrice = parseFloat(document.getElementById("calculatedPrice").textContent.slice(1));
+           // Get the selected date
+            var startDate = document.getElementById("startDate").value;
+            // Check if the calculated price is greater than zero and date is selected
+            if (calculatedPrice > 0 && startDate) {
+                // Hide error message if everything is correct
+                document.getElementById("errorMessage").style.display = "none";
+                // Display success message
+                document.getElementById("successMessage").style.display = "block";
+            } else {
+                // Display error message if any check fails
+                document.getElementById("errorMessage").style.display = "block";
+                document.getElementById("successMessage").style.display = "none";
+            }
+        });
+    </script>
+    <script>
+        const authButton = document.getElementById('authButton');
+        const userDetails = document.getElementById('userDetails');
+
+
+        // LOGIN 
+        // Check if the user is logged in
+        function checkUserLogin() {
+            const user = JSON.parse(localStorage.getItem('user'));
+            if (user) {
+                // User is logged in: show Logout button
+                authButton.textContent = `Logout (${user.name})`;
+                authButton.addEventListener('click', logoutUser);
+            } else {
+                // User is not logged in: show Login button
+                authButton.textContent = 'Login';
+                authButton.addEventListener('click', () => {
+                    window.location.href = 'login.html'; // Navigate to login page
+                });
+            }
+        }
+
+        // Logout user: remove user details from localStorage and reload the page
+        function logoutUser() {
+            localStorage.removeItem('user');
+            location.reload(); // Refresh the page to update UI
+        }
+
+        // Initialize the login/logout button
+        checkUserLogin();
+
+
+        document.getElementById("contact-form").addEventListener("submit", function (event) {
+            event.preventDefault();  // Prevent form from submitting to the server
+
+            // Reset the form fields
+            document.getElementById("contact-form").reset();
+        });
+    </script>
+</body>
+
+</html>

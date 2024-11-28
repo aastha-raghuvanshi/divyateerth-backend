@@ -1,0 +1,430 @@
+/* Reset and General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.banner {
+    background-image: url("bg1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color:orange(0, 0, 0, 0.2);
+}
+.banner-text-item {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    color: beige;
+}
+
+.banner-heading h1 {
+    font-size: 50px;
+    font-weight: normal;
+    color: orangered;
+}
+
+.banner-text-item .form {
+    flex: 1;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: grey(255, 255, 255, 0.2);
+    border-radius: 5px;
+    width: 70%;
+    padding: 1% 2%;
+}
+.banner-text-item input,
+.banner-text-item .date,
+.banner-text-item .book {
+    padding: 15px;
+    margin-right: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    outline: 0;
+    border: none;
+} 
+.banner-text-item input {
+    width: 50%;
+}
+
+.banner-text-item .date {
+    width: 20%;
+}
+
+.banner-text-item .book {
+    width: 20%;
+    text-decoration: none;
+    color: #000;
+    text-transform: uppercase;
+    background-color: #fde02f;
+    cursor: pointer;
+}
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Navbar/Header */
+.navbar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: grey;
+    color: #fff;
+    padding: 1rem 2rem;
+}
+
+.navbar .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .menu a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+.navbar .menu a:hover {
+    text-decoration: underline;
+}
+
+.navbar .user-details {
+    font-size: 1rem;
+}
+
+.navbar .user-details button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Full-Screen Image */
+.hero-image {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    text-align: center;
+}
+
+.hero-image h1 {
+    font-size: 3rem;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem 2rem;
+    border-radius: 5px;
+}
+
+/* Book Now Section */
+.book-now {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.book-now .btn {
+    padding: 1rem 2rem;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.book-now .btn:hover {
+    background: #0056b3;
+}
+
+/* About Us Section */
+.about-us {
+    padding: 2rem;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+.about-us h2 {
+    margin-bottom: 1rem;
+}
+
+.about-us p {
+    padding: 0 50px;
+    margin: 0 auto;
+    font-size: 1rem;
+}
+
+/* Services Section */
+/* Updated Cities Section */
+.services {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 20px; 
+    padding: 60px 20px;
+    background-color: #f9f9f9; 
+}
+
+  /* Service Item Styling */
+.service-item {
+    flex: 1 1 calc(25% - 40px); 
+    max-width: 300px; 
+    background-color: #fff; 
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
+    padding: 20px; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+
+.service-item:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
+}
+
+  /* Image Styling */
+.service-item img {
+    width: 100%; 
+    max-width: 250px; 
+    height: auto; 
+    border-radius: 10px; 
+    margin-bottom: 15px; 
+}
+.service-item h2 {
+    font-size: 1.2rem; 
+    color: #191d34; 
+    margin: 10px 0; 
+}
+
+  /* Responsive Design */
+@media (max-width: 1024px) {
+    .service-item {
+        flex: 1 1 calc(50% - 20px); 
+    }
+}
+
+@media (max-width: 768px) {
+    .service-item {
+        flex: 1 1 100%; /* One item per row */
+    }
+}
+/* Places */
+.places-text {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.places-text small {
+    color: #ffc342;
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+.places-text h2 {
+    font-size: 55px;
+    color: #191d34;
+    letter-spacing: 1px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 30px;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.card {
+    border: 1px solid lightgray;
+    box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.3);
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    width: 80%;
+}
+
+.card img {
+    max-width: 100%;
+    height: 300px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+
+/* Footer */
+footer {
+    background-image: url("footerimage.jfif"); /* Replace with your image path */
+    background-size: cover; /* Cover entire footer */
+    background-repeat: no-repeat; /* Avoid repeating the image */
+    background-position: center; /* Center the image */
+    position: relative; /* Position for overlay */
+    color: #ffffff; /* White text for contrast */
+    padding: 20px 15px; /* Padding for spacing */
+    display: flex;
+    flex-wrap: wrap; /* Responsive layout */
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: center;
+}
+
+  /* Dark Overlay */
+footer::before {
+    content: ""; /* Empty pseudo-element */
+    position: absolute; /* Positioned relative to footer */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6); /* Increased opacity for better contrast */
+    z-index: 0; /* Place behind content */
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15rem;
+    position: relative; /* To ensure content stays above the overlay */
+    z-index: 1; /* Layer content above the overlay */
+}
+
+.footer-form,
+.footer-details {
+    flex: 1;
+    min-width: 300px;
+}
+
+.footer-details {
+    margin-top: 3rem;
+}
+
+.footer-form h2,
+.footer-details h2 {
+    margin-bottom: 1rem;
+}
+
+.footer-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.footer-form label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-form input,
+.footer-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.footer-form textarea {
+    resize: none;
+}
+
+.footer-form .btn {
+    padding: 0.8rem 1.5rem;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    float: right;
+}
+
+.footer-form .btn:hover {
+    background: #0056b3;
+}
+
+.footer-details p {
+    margin-bottom: 0.8rem;
+}
+
+.footer-details strong {
+    color: #ffc107;
+}
+
+
+/* Login Page */
+.login-container {
+    max-width: 400px;
+    margin: 3rem auto;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 1.5rem;
+}
+
+.login-container .form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.login-container label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.login-container .btn {
+    width: 100%;
+    padding: 0.8rem;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.login-container .btn:hover {
+    background: #0056b3;
+}
