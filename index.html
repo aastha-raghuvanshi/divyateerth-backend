@@ -2,226 +2,237 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <title>DivyaTeerth</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Book India’s most divine pilgrimage tours with DivyaTeerth – Ayodhya, Varanasi, Chardham, and more.">
+<meta name="keywords" content="pilgrimage, india tours, spiritual travel, varanasi tour, ayodhya, chardham yatra">
+
+  <link rel="stylesheet" href="styles.css" />
+  <title>DivyaTeerth</title>
 </head>
 
 <body>
-    <!-- Navbar/Header -->
-    <header class="navbar">
-        <div class="logo">DivyaTeerth</div>
-        <nav class="menu">
-            <a href="index.html">Home</a>
-            <a href="index.html#about-us">About Us</a>
-            <a href="index.html#cities">Cities</a>
-            <a href="packages.html">Packages</a>
-            <a href="#blog">Blog</a>
-            <a href="#contact-us">Contact Us</a>
-        </nav>
-        <div class="user-details" id="userDetails">
-            <button id="authButton" class="btn"></button>
-        </div>
-    
-    </header>
+  <!-- Navbar/Header -->
+  <header class="navbar">
+    <div class="logo">DivyaTeerth</div>
+    <nav class="menu">
+      <a href="index.html">Home</a>
+      <a href="index.html#about-us">About Us</a>
+      <a href="index.html#places">Cities</a>
+      <a href="packages.html">Packages</a>
+      <a href="index.html#contact-us">Contact Us</a>
+    </nav>
+    <div class="user-details" id="userDetails">
+      <button id="authButton" class="btn"></button>
+    </div>
+  </header>
 
-    <!-- Full-Screen Image -->
-        <section class="banner">
-        <div class="banner-text-item">
-            <h1>Explore Faith, Embrace Tradition!</h1>
-            <form class="form">
-                <input type="text" list="destinations" placeholder="Where would you like to go?">
-                <datalist id="destinations">
-                    <option>Varanasi</option>
-                    <option>Ayodhya</option>
-                    <option>Rameshwaram</option>
-                    <option>Chardham</option>
-                    <option>Mathura</option>
-                </datalist>
-                <input type="date" class="date">
-                <button type="submit" class="book">BOOK NOW</button>
-            </form>
-        </div>
-        <script>
-            // JavaScript to handle form submission
-            document.querySelector('.form').addEventListener('submit', function(event) {
-                event.preventDefault(); 
-                let destination = document.querySelector('input[list="destinations"]').value;
-                let date = document.querySelector('input[type="date"]').value;
-                
-                if (destination && date) {
-                    alert(`You can view all the different packages for your trip to ${destination} on ${date}!`);
-                } else {
-                    alert('Please select both a destination and a date.');
-                }
-            });
-        </script>
-    </section>
-        
-        
-
-    <!-- About Us Section -->
-    <section id="about-us" class="about-us">
-        <h2>About Us</h2>
-        <p>
-            India is a land of holy cities. Pilgrimage site has always been the most versatile kind of tourism in India.
-            Religious tourism has taken place since the dawn of civilization. Pilgrims travel to pay homage to the
-            sacred places throughout the world. Rich culture, heritage and history of India alone attracts a lot of
-            tourists to travel India each year.
-            DivyaTeerth offers meticulously crafted pilgrimage tours to India's most sacred destinations. 
-            With decades of experience, we provide unmatched hospitality and spiritual journeys.
-            </p>
-        
-                <li><label><input type="checkbox" checked>Comprehensive Itineraries</label></li>
-                <li><label><input type="checkbox" checked>Online Booking Platform</label></li>
-                <li><label><input type="checkbox" checked>Festive Special Tours</label></li>
-                <li><label><input type="checkbox" checked>24/7 Customer Support</label></li>
-            
-    </section>
-
-    <!-- Services Section -->
-    <section class="services">
-        <div class="service-item">
-            <img src="guide.jfif" alt="Local Guides">
-            <h2>150+ Our Local Guides</h2>
-        </div>
-        <div class="service-item">
-            <img src="trust.jfif" alt="Trusted Tour Agency">
-            <h2>100% Trusted Tour Agency</h2>
-        </div>
-        <div class="service-item">
-            <img src="experience.webp" alt="10 Years Experience">
-            <h2>10+ Years of Travel Experience</h2>
-        </div>
-        <div class="service-item">
-            <img src="customers.avif" alt="Happy Travelers">
-            <h2>98% Our Travelers are Happy</h2>
-        </div>
-    </section>
-    <!-- Cards  -->
-    <section class="places">
-        <div class="places-text">
-            <h2><u>Favourite Destinations</u></h2>
-        </div>
-        <div class="cards">
-            <div class="card">
-                <img src="ganges.webp" alt="Varanasi">
-                <h3>Varanasi Spiritual Journey</h3>
-                <p class="cost">₹15,000 / Person</p>
-                <button>Learn More</button>
-            </div>
-            <div class="card">
-                <img src="haridwar.jpg" alt="Haridwar">
-                <h3>Haridwar Blissful Tour</h3>
-                <p class="cost">₹12,000 / Person</p>
-                <button>Learn More</button>
-            </div>
-            <div class="card">
-                <img src="chardham.jpg" alt="Chardham Yatra">
-                <h3>Chardham Helicopter Yatra</h3>
-                <p class="cost">₹75,000 / Person</p>
-                <button>Learn More</button>
-            </div>
-            <div class="card">
-                <img src="mathura.jpg" alt="Mathura">
-                <h3>Mathura Holi Tour</h3>
-                <p class="cost">₹20,000 / Person</p>
-                <button>Learn More</button>
-            </div>
-            <div class="card">
-                <img src="ayodhya.avif" alt="Ayodhya">
-                <h3>Ayodhya Darshan</h3>
-                <p class="cost">₹15,000 / Person</p>
-                <button>Learn More</button>
-            </div>
-            <div class="card">
-                <img src="south.avif" alt="South">
-                <h3>Explore South Temples</h3>
-                <p class="cost">₹30,000 / Person</p>
-                <button>Learn More</button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer" id="contact-us">
-        <div class="footer-container">
-            <!-- Feedback/Question Form -->
-            <div class="footer-form">
-                <h2><strong>CONTACT US:</strong></h2>
-                <form action="#" method="POST" id="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message:</label>
-                        <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Submit</button>
-                </form>
-            </div>
-
-            <!-- Contact Details -->
-            <div class="footer-details">
-                <h2>Get in Touch With Us</h2>
-                <p><strong>Email:</strong> divyateerth123@company.com</p>
-                <p><strong>Phone:</strong> +123 456 7890</p>
-                <p><strong>Address:</strong> 123 Main Street, India</p>
-                <p><strong>Business Hours:</strong></p>
-                <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
-            </div>
-        </div>
-    </footer>
-
-
-    <!-- login -->
+  <!-- Banner Section -->
+  <section class="banner">
+    <div class="banner-text-item">
+      <h1>Explore Faith, Embrace Tradition!</h1>
+      <form class="form">
+        <input type="text" list="destinations" placeholder="Where would you like to go?" />
+        <datalist id="destinations">
+          <option>Varanasi</option>
+          <option>Ayodhya</option>
+          <option>Rameshwaram</option>
+          <option>Chardham</option>
+          <option>Mathura</option>
+        </datalist>
+        <input type="date" class="date" />
+        <button type="submit" class="book">BOOK NOW</button>
+      </form>
+    </div>
     <script>
-        const authButton = document.getElementById('authButton');
-        const userDetails = document.getElementById('userDetails');
-
-
-        // LOGIN 
-        // Check if the user is logged in
-        function checkUserLogin() {
-            const user = JSON.parse(localStorage.getItem('user'));
-            if (user) {
-                // User is logged in: show Logout button
-                authButton.textContent = `Logout (${user.name})`;
-                authButton.style.backgroundColor = "red";
-                authButton.addEventListener('click', logoutUser);
-            } else {
-                // User is not logged in: show Login button
-                authButton.textContent = 'Login';
-                authButton.style.backgroundColor = "#4CAF50";
-                authButton.addEventListener('click', () => {
-                    window.location.href = 'login.html'; // Navigate to login page
-                });
-            }
+      document.querySelector('.form').addEventListener('submit', function (event) {
+        event.preventDefault();
+        let destination = document.querySelector('input[list="destinations"]').value;
+        let date = document.querySelector('input[type="date"]').value;
+        if (destination && date) {
+          alert(`You can view all the different packages for your trip to ${destination} on ${date}!`);
+        } else {
+          alert('Please select both a destination and a date.');
         }
-
-        // Logout user: remove user details from localStorage and reload the page
-        function logoutUser() {
-            localStorage.removeItem('user');
-            location.reload(); // Refresh the page to update UI
-        }
-
-        // Initialize the login/logout button
-        checkUserLogin();
-
-
-        document.getElementById("contact-form").addEventListener("submit", function (event) {
-            event.preventDefault();  // Prevent form from submitting to the server
-
-            // Reset the form fields
-            document.getElementById("contact-form").reset();
-        });
+      });
     </script>
+  </section>
 
+  <!-- About Us -->
+  <section id="about-us" class="about-us">
+    <h2>About Us</h2>
+    <p>
+      India is a land of holy cities. Pilgrimage site has always been the most versatile kind of tourism in India.
+      Religious tourism has taken place since the dawn of civilization. Pilgrims travel to pay homage to the sacred
+      places throughout the world. Rich culture, heritage and history of India alone attracts a lot of tourists to
+      travel India each year. DivyaTeerth offers meticulously crafted pilgrimage tours to India's most sacred
+      destinations. With decades of experience, we provide unmatched hospitality and spiritual journeys.
+    </p>
+    <ul>
+      <li><label><input type="checkbox" checked /> Comprehensive Itineraries</label></li>
+      <li><label><input type="checkbox" checked /> Online Booking Platform</label></li>
+      <li><label><input type="checkbox" checked /> Festive Special Tours</label></li>
+      <li><label><input type="checkbox" checked /> 24/7 Customer Support</label></li>
+    </ul>
+  </section>
+
+  <!-- Services -->
+  <section class="services">
+    <div class="service-item">
+      <img src="guide.jfif" alt="Local Guides" />
+      <h2>150+ Our Local Guides</h2>
+    </div>
+    <div class="service-item">
+      <img src="trust.jfif" alt="Trusted Tour Agency" />
+      <h2>100% Trusted Tour Agency</h2>
+    </div>
+    <div class="service-item">
+      <img src="experience.webp" alt="10 Years Experience" />
+      <h2>10+ Years of Travel Experience</h2>
+    </div>
+    <div class="service-item">
+      <img src="customers.avif" alt="Happy Travelers" />
+      <h2>98% Our Travelers are Happy</h2>
+    </div>
+  </section>
+
+
+  <section id="places" class="places">
+    <div class="places-text">
+      <h2><u>Favourite Destinations</u></h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <img src="ganges.webp" alt="Varanasi" />
+        <h3>Varanasi Spiritual Journey</h3>
+        <p class="cost">₹15,000 / Person</p>
+        <button>Learn More</button>
+      </div>
+      <div class="card">
+        <img src="haridwar.jpg" alt="Haridwar" />
+        <h3>Haridwar Blissful Tour</h3>
+        <p class="cost">₹12,000 / Person</p>
+        <button>Learn More</button>
+      </div>
+      <div class="card">
+        <img src="chardham.jpg" alt="Chardham Yatra" />
+        <h3>Chardham Helicopter Yatra</h3>
+        <p class="cost">₹75,000 / Person</p>
+        <button>Learn More</button>
+      </div>
+      <div class="card">
+        <img src="mathura.jpg" alt="Mathura" />
+        <h3>Mathura Holi Tour</h3>
+        <p class="cost">₹20,000 / Person</p>
+        <button>Learn More</button>
+      </div>
+      <div class="card">
+        <img src="ayodhya.avif" alt="Ayodhya" />
+        <h3>Ayodhya Darshan</h3>
+        <p class="cost">₹15,000 / Person</p>
+        <button>Learn More</button>
+      </div>
+      <div class="card">
+        <img src="south.avif" alt="South" />
+        <h3>Explore South Temples</h3>
+        <p class="cost">₹30,000 / Person</p>
+        <button>Learn More</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer with Contact Form -->
+  <footer class="footer" id="contact-us">
+    <div class="footer-container">
+      <!-- Contact Form -->
+      <div class="footer-form">
+        <h2><strong>CONTACT US:</strong></h2>
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" placeholder="Your Message" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn">Submit</button>
+        </form>
+      </div>
+
+      <!-- Contact Details -->
+      <div class="footer-details">
+        <h2>Get in Touch With Us</h2>
+        <p><strong>Email:</strong> divyateerth123@company.com</p>
+        <p><strong>Phone:</strong> +123 456 7890</p>
+        <p><strong>Address:</strong> 123 Main Street, India</p>
+        <p><strong>Business Hours:</strong></p>
+        <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS Scripts -->
+  <script>
+
+    const authButton = document.getElementById("authButton");
+
+    function checkUserLogin() {
+      const user = JSON.parse(localStorage.getItem("user"));
+      if (user) {
+        authButton.textContent = `Logout (${user.name})`;
+        authButton.style.backgroundColor = "red";
+        authButton.addEventListener("click", logoutUser);
+      } else {
+        authButton.textContent = "Login";
+        authButton.style.backgroundColor = "#4CAF50";
+        authButton.addEventListener("click", () => {
+          window.location.href = "login.html";
+        });
+      }
+    }
+
+    function logoutUser() {
+      localStorage.removeItem("user");
+      location.reload();
+    }
+
+    checkUserLogin();
+
+    // Backend contact form submit
+    document.getElementById("contact-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const message = document.getElementById("message").value;
+
+fetch("http://localhost:5001/contact", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({ name, email, message })
+})
+// ...existing code...
+        .then((res) => {
+          if (res.ok) {
+            alert("Thank you for contacting DivyaTeerth!");
+            document.getElementById("contact-form").reset();
+          } else {
+            alert("Error sending message.");
+          }
+        })
+        .catch((err) => {
+          console.error("Error:", err);
+          alert("Server error, please try again later.");
+        });
+    });
+  </script>
 </body>
+
 </html>
